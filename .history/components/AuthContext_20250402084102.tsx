@@ -3,8 +3,6 @@
 import { createContext, useState, useEffect, useCallback } from "react";
 
 interface User {
-  photo: string;
-  photo: boolean;
   id: string;
   name: string;
   role: string;

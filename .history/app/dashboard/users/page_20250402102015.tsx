@@ -9,7 +9,6 @@ import { deleteUser, getAllUsers, updateUser } from "@/utils/actions";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/components/AuthContext";
-import Image from "next/image";
 
 const UsersPage = () => {
   const { user } = useContext(AuthContext) ?? {};
@@ -76,16 +75,13 @@ const UsersPage = () => {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">Gestion des Utilisateurs</h1>
-      <div className="flex justify-between items-center mb-4">
-        <input
-          type="text"
-          className="border p-2 rounded w-full"
-          placeholder="Numéro Téléphone"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <span className="ml-4 text-gray-600">Total : {totalUsers}</span>
-      </div>
+      <input
+        type="text"
+        className="border p-2 rounded w-full mb-4"
+        placeholder="Numéro Téléphone"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filteredUsers.length > 0 ? (
@@ -101,16 +97,6 @@ const UsersPage = () => {
                       onBlur={(e) => handleEditUser(user.id, { name: e.target.value })}
                     />
                   </CardTitle>
-
-                  <Image
-  src={user.photo || '/lp.jpeg'}
-  alt={`Photo de ${user.name}`}
-  width={50}
-  height={50}
-  className="rounded-full"
-  onError={(e) => e.currentTarget.src = '/lp.jpeg'}  // Si l'image ne se charge pas, on remplace par l'image par défaut
-/>
-
                   <CardDescription>
                     <input
                       type="text"

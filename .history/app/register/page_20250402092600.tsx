@@ -32,7 +32,7 @@ export default function RegisterPage() {
     confirmPassword: "",
     name: "",
     role: Role.USER,
-    photo: "",
+    
   });
 
   const [loading, setLoading] = useState(false);

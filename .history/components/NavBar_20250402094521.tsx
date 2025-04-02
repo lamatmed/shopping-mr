@@ -97,7 +97,7 @@ export default function NavBar() {
               className="bg-white text-blue-600 flex items-center space-x-2"
             >
               <Image
-                src={user.photo && user.photo !== "" ? user.photo : "/lp.jpeg"}
+                src={user.photo && user.photo !== "" ? user.photo : "/lok.jpg"}
                 alt={`Photo de ${user.name}`}
                 width={32}
                 height={32}

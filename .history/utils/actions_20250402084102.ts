@@ -4,7 +4,7 @@ import { prisma } from "../lib/prisma";
 import bcrypt from "bcryptjs";
 
 // Gestion des utilisateurs
-export const createUser = async (data: { nni: string; password: string; name: string;  photo:string,role?: "ADMIN" | "USER" }) => {
+export const createUser = async (data: { nni: string; password: string; name: string; role?: "ADMIN" | "USER" }) => {
   const hashedPassword = await bcrypt.hash(data.password, 10);
   return await prisma.user.create({
     data: { ...data, password: hashedPassword },

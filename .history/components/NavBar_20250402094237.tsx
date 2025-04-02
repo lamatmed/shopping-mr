@@ -36,13 +36,13 @@ export default function NavBar() {
       {/* Logo + Menu mobile */}
       <div className="flex items-center space-x-4">
         <Link href="/">
-          <Image src={"/lok.jpg"} alt="logo" width={70} height={70} />
+          <Image src={"/union.jpg"} alt="logo" width={70} height={70} />
         </Link>
         <a
           href="/produits"
           className="text-sm font-bold text-blue-600 hover:text-blue-900 bg-white p-1 rounded"
         >
-          Shopping
+          Activités
         </a>
 
         {/* Bouton Menu Mobile */}
@@ -97,7 +97,7 @@ export default function NavBar() {
               className="bg-white text-blue-600 flex items-center space-x-2"
             >
               <Image
-                src={user.photo && user.photo !== "" ? user.photo : "/lp.jpeg"}
+                src={user.photo && user.photo !== "" ? user.photo : "/R.png"}
                 alt={`Photo de ${user.name}`}
                 width={32}
                 height={32}

@@ -15,8 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Role } from "@prisma/client";
 import { motion } from "framer-motion";
 import { AuthContext } from "@/components/AuthContext";
-import { User, Lock, Phone, CameraIcon } from "lucide-react";
-import Uploader from "@/components/Uploader";
+import { User, Lock, Phone } from "lucide-react";
 export default function RegisterPage() {
   const { user } = useContext(AuthContext) ?? {};
   const router = useRouter();
@@ -32,7 +31,6 @@ export default function RegisterPage() {
     confirmPassword: "",
     name: "",
     role: Role.USER,
-    photo: "",
   });
 
   const [loading, setLoading] = useState(false);

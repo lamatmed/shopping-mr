@@ -31,18 +31,22 @@ export default function NavBar() {
   return (
     <nav
       className="p-4 bg-gray-300 shadow-md flex items-center justify-between"
-     
+      style={{
+        backgroundImage: "url('/uda.jpg')", // Remplace par ton image
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       {/* Logo + Menu mobile */}
       <div className="flex items-center space-x-4">
         <Link href="/">
-          <Image src={"/lok.jpg"} alt="logo" width={70} height={70} />
+          <Image src={"/union.jpg"} alt="logo" width={70} height={70} />
         </Link>
         <a
-          href="/produits"
+          href="/activités"
           className="text-sm font-bold text-blue-600 hover:text-blue-900 bg-white p-1 rounded"
         >
-          Shopping
+          Activités
         </a>
 
         {/* Bouton Menu Mobile */}
@@ -97,7 +101,7 @@ export default function NavBar() {
               className="bg-white text-blue-600 flex items-center space-x-2"
             >
               <Image
-                src={user.photo && user.photo !== "" ? user.photo : "/lp.jpeg"}
+                src={user.photo && user.photo !== "" ? user.photo : "/R.png"}
                 alt={`Photo de ${user.name}`}
                 width={32}
                 height={32}
@@ -111,7 +115,7 @@ export default function NavBar() {
               <DropdownMenuLabel>
                 <div className="flex items-center space-x-2">
                   <Image
-                    src={user.photo && user.photo !== "" ? user.photo : "/lok.jpg"}
+                    src={user.photo && user.photo !== "" ? user.photo : "/lok.png"}
                     alt={`Photo de ${user.name}`}
                     width={32}
                     height={32}

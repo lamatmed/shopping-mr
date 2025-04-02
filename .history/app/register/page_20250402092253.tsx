@@ -15,8 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Role } from "@prisma/client";
 import { motion } from "framer-motion";
 import { AuthContext } from "@/components/AuthContext";
-import { User, Lock, Phone, CameraIcon } from "lucide-react";
-import Uploader from "@/components/Uploader";
+import { User, Lock, Phone } from "lucide-react";
 export default function RegisterPage() {
   const { user } = useContext(AuthContext) ?? {};
   const router = useRouter();
@@ -32,7 +31,6 @@ export default function RegisterPage() {
     confirmPassword: "",
     name: "",
     role: Role.USER,
-    photo: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -124,18 +122,6 @@ export default function RegisterPage() {
                 className="pl-10"
               />
             </div>
-            <div className="relative flex flex-col items-center p-3 border border-gray-300 rounded-lg shadow-sm bg-white w-full max-w-xs">
-                  {/* Label avec icône et texte */}
-                  <label className="flex items-center space-x-2 text-gray-700 font-medium">
-                    <CameraIcon className="w-5 h-5 text-blue-500" />
-                    <span>Photo de profil</span>
-                  </label>
-
-                  {/* Composant Uploader */}
-                  <Uploader
-                    onUpload={(url) => setUser({ ...userp, photo: url })}
-                  />
-                </div>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-red-500" />
               <Input

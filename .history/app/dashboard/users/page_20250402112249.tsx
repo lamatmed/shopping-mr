@@ -103,12 +103,12 @@ const UsersPage = () => {
                   </CardTitle>
 
                   <Image
-  src={user.photo || '/lp.jpeg'}
+  src={user.photo || '/lok.jpg'}
   alt={`Photo de ${user.name}`}
   width={50}
   height={50}
   className="rounded-full"
-  onError={(e) => e.currentTarget.src = '/lp.jpeg'}  // Si l'image ne se charge pas, on remplace par l'image par défaut
+  onError={(e) => e.currentTarget.src = '/lok.jpg'}  // Si l'image ne se charge pas, on remplace par l'image par défaut
 />
 
                   <CardDescription>

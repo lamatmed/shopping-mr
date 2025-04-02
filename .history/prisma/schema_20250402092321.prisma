@@ -19,7 +19,7 @@ model User {
   nni       String   @unique
   password  String
   name      String
-  photo     String?   
+  
   role      Role     @default(USER)
   products  Product[] // Relation avec les produits
   createdAt DateTime @default(now())

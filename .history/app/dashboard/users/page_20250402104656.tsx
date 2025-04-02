@@ -9,7 +9,6 @@ import { deleteUser, getAllUsers, updateUser } from "@/utils/actions";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/components/AuthContext";
-import Image from "next/image";
 
 const UsersPage = () => {
   const { user } = useContext(AuthContext) ?? {};
@@ -103,12 +102,12 @@ const UsersPage = () => {
                   </CardTitle>
 
                   <Image
-  src={user.photo || '/lp.jpeg'}
+  src={user.photo || "/default-avatar.png"}
   alt={`Photo de ${user.name}`}
-  width={50}
-  height={50}
+  width={64}
+  height={64}
   className="rounded-full"
-  onError={(e) => e.currentTarget.src = '/lp.jpeg'}  // Si l'image ne se charge pas, on remplace par l'image par défaut
+  onError={(e) => e.currentTarget.src = '/default-avatar.png'}  // Si l'image ne se charge pas, on remplace par l'image par défaut
 />
 
                   <CardDescription>

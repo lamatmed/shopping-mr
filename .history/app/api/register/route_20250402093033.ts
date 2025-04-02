@@ -4,11 +4,11 @@ import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
   try {
-    const { nni, password, name, role ,photo } = await req.json();
+    const { nni, password, name, role } = await req.json();
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await prisma.user.create({
-      data: { nni, password: hashedPassword, name, role ,photo },
+      data: { nni, password: hashedPassword, name, role ,photo, },
     });
 
     return NextResponse.json(newUser, { status: 201 });
